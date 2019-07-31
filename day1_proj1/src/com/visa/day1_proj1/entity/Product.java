@@ -1,6 +1,6 @@
 package com.visa.day1_proj1.entity;
 
-public abstract class Product {
+public abstract class Product implements Comparable<Product> {
 	private int id;
 	private String name;
 	private double price;
@@ -32,6 +32,15 @@ public abstract class Product {
 	
 	public abstract boolean isExpensive();
 	
+	@Override
+	public int compareTo(Product o) {
+		// TODO Auto-generated method stub
+		return Double.compare(this.price,o.price);
+	}
+	@Override
+	public String toString() {
+		return "Product [id=" + id + ", name=" + name + ", price=" + price + "]";
+	}
 	
 
 }
