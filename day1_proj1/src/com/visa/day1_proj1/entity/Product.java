@@ -1,15 +1,20 @@
 package com.visa.day1_proj1.entity;
 
+import com.visa.day1_proj1.annotation.Column;
+import com.visa.day1_proj1.annotation.Table;
+@Table(name="products")
 public abstract class Product implements Comparable<Product> {
 	private int id;
 	private String name;
 	private double price;
+	@Column(name="prod_id",type="NUMERIC(10)")
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
+	@Column(name="prod_name")
 	public String getName() {
 		return name;
 	}
