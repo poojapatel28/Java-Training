@@ -35,7 +35,7 @@ public class DonationService {
 	public int addDonation(Donation d)
 	{
 		Campaign c = getCampaignById(d.getCampaign().getId());
-		c.setAmount(c.getAmountCollected()+d.getAmount());
+		c.setAmountCollected(c.getAmountCollected()+d.getAmount());
 		donationDao.save(d);
 		return d.getId();
 	}
