@@ -21,11 +21,16 @@ public class ProductClient {
 		OrderService os = ctx.getBean("orderService",OrderService.class);
 		
 		Product p=new Product(0,"Logitech Mouse","computer",450.00,1000);
-		os.insertProduct(p);
-		
+		//os.insertProduct(p);
+		//System.out.println("Inserted : "+ p.getId());
 		p=os.getById(1);
 		
 		System.out.println(p.getName()+","+p.getCategory()+","+p.getPrice());
+		
+		System.out.println("-----All Products-----");
+		for (Product pt : os.fetchProducts()) {
+			System.out.println(pt.getName()+","+pt.getCategory()+","+pt.getPrice()+","+pt.getCount()+","+pt.getId());
+		}
 
 	}
 

@@ -37,6 +37,8 @@ public class AppConfig {
             emf.setPackagesToScan("com.visa.prj.entity");
         Properties props = new Properties();
             props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+            props.setProperty("hibernate.show_sql", "true");
+            props.setProperty("hibernate.fromat_sql", "true");
             //map existing table to entity class, if table not present create in db. 
             props.setProperty("hibernate.hbm2ddl.auto", "update") ; // create or update
             emf.setJpaProperties(props);
